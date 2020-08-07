@@ -1,0 +1,806 @@
+{% extends 'base.html '%}
+{% load static %}
+{% block title %}Partymenu {% endblock %}
+
+{% block body %}
+       <div class="breadcrumbs-area bread-bg-2 bg-opacity-black-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="breadcrumbs">
+                            <h2 class="breadcrumbs-title">Party Menu</h2>
+                            <ul class="breadcrumbs-list">
+                                <li><a href="{% url 'home'%}">Home</a></li>
+                                <li>Party Menu</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+		<section id="page-content" class="page-wrapper">
+
+            <!-- CONTACT AREA START -->
+            <div class="contact-area pt-115 pb-115">
+				<div class="container">
+					<div class="col-sm-12">
+						{% comment %} <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true"> {% endcomment %}
+						<div class="panel-group accordion" id="accordionId" >
+
+				  
+						  {% comment %} <div class="panel panel-default">
+							<div class="panel-heading" role="tab" id="1">
+							  <h4 class="panel-title">
+								<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+								  VEG APPETISERS
+								</a>
+							  </h4>
+							</div>
+							<div id="collapseOne" class=" collapse in" role="tabpanel" aria-labelledby="1">
+							  <div class="panel-body">
+								<table class="table table-striped">
+										<thead>
+											<tr>
+												<th>Name</th>
+												<th>Small Tray(in $)</th>
+												<th>Large Tray(in $)</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Samosa each </td>
+												<td>40</td>
+												<td>80</td>
+											</tr>
+											<tr>
+												<td>Pav bhaji </td>
+												<td>40</td>
+												<td>80</td>
+											</tr>
+											<tr>
+												<td>Bread pakoda </td>
+												<td>40</td>
+												<td>80</td>
+											</tr>
+											<tr>
+												<td>Palak/onion pakoda</td>
+												<td>40</td>
+												<td>80</td>
+											</tr>
+											<tr>
+												<td>Mix veg pakoda</td>
+												<td>45</td>
+												<td>80</td>
+											</tr>
+											<tr>
+												<td>Cheese toast</td>
+												<td>45</td>
+												<td>80</td>
+											</tr>
+											<tr>
+												<td>Masala vada	</td>
+												<td>45</td>
+												<td>80</td>
+											</tr>
+											<tr>
+												<td>Paneer tikka		</td>
+												<td>50</td>
+												<td>90</td>
+											</tr>
+											<tr>
+												<td>Vegetable cutlet</td>
+												<td>45</td>
+												<td>80</td>
+											</tr>
+											<tr>
+												<td>Vegetable rolls</td>
+												<td>45</td>
+												<td>80</td>
+											</tr>
+											<tr>
+												<td>Aloo tikki</td>
+												<td>40</td>
+												<td>80</td>
+											</tr>
+											<tr>
+												<td>Khaman dhokla</td>
+												<td>40</td>
+												<td>80</td>
+											</tr>
+											<tr>
+												<td>Khaman dhokla</td>
+												<td>45</td>
+												<td>80</td>
+											</tr>
+										</tbody>
+									</table>
+							  </div>
+							</div>
+						  </div>
+						  
+						  
+						 <div class="panel panel-default">
+							<div class="panel-heading" role="tab" id="2">
+							  <h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#INDOCHINESE" aria-expanded="false" aria-controls="2">
+								  INDO CHINESE
+								</a>
+							  </h4>
+							</div>
+							<div id="INDOCHINESE" class="panel-collapse collapse" role="tabpanel" aria-labelledby="2">
+							  <div class="panel-body">
+								<table class="table table-striped">
+										<thead>
+											<tr>
+												<th>Name</th>
+												<th>Small Tray(in $)</th>
+												<th>Large Tray(in $)</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Chilli paneer</td>
+												<td>50</td>
+												<td>90</td>
+											</tr>
+											<tr>
+												<td>Veg manchurian</td>
+												<td>50</td>
+												<td>90</td>
+											</tr>
+											<tr>
+												<td>Gobi 65</td>
+												<td>50</td>
+												<td>90</td>
+											</tr>
+											<tr>
+												<td>Schezuan fried rice</td>
+												<td>40</td>
+												<td>80</td>
+											</tr>
+											<tr>
+												<td>Hakka noodles</td>
+												<td>40</td>
+												<td>80</td>
+											</tr>
+										</tbody>
+									</table>
+							  </div>
+							</div>
+						  </div>
+						  
+						  
+						  
+						  <div class="panel panel-default">
+							<div class="panel-heading" role="tab" id="3">
+							  <h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#NONVEGAPPETISERS" aria-expanded="false" aria-controls="3">
+								  NON VEG APPETISERS
+								</a>
+							  </h4>
+							</div>
+							<div id="NONVEGAPPETISERS" class="panel-collapse collapse" role="tabpanel" aria-labelledby="3">
+							  <div class="panel-body">
+								<table class="table table-striped">
+										<thead>
+											<tr>
+												<th>Name</th>
+												<th>Small Tray(in $)</th>
+												<th>Large Tray(in $)</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Goat fry</td>
+												<td>60</td>
+												<td>100</td>
+											</tr>
+											<tr>
+												<td>Chicken kabob</td>
+												<td>50</td>
+												<td>90</td>
+											</tr>
+											<tr>
+												<td>Fish fry</td>
+												<td>50</td>
+												<td>90</td>
+											</tr>
+											<tr>
+												<td>Chicken tandoori</td>
+												<td>50</td>
+												<td>95</td>
+											</tr>
+										</tbody>
+									</table>
+							  </div>
+							</div>
+						  </div>
+						  
+						  
+						  
+						  <div class="panel panel-default">
+							<div class="panel-heading" role="tab" id="4">
+							  <h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#INDOCHINESE4" aria-expanded="false" aria-controls="4">
+								  INDO CHINESE
+								</a>
+							  </h4>
+							</div>
+							<div id="INDOCHINESE4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="4">
+							  <div class="panel-body">
+								<table class="table table-striped">
+										<thead>
+											<tr>
+												<th>Name</th>
+												<th>Small Tray(in $)</th>
+												<th>Large Tray(in $)</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Chilli chicken</td>
+												<td>50</td>
+												<td>90</td>
+											</tr>
+											<tr>
+												<td>Chicken 65</td>
+												<td>50</td>
+												<td>90</td>
+											</tr>
+											<tr>
+												<td>Chicken hakka noodles</td>
+												<td>40</td>
+												<td>80</td>
+											</tr>
+											<tr>
+												<td>Chicken fried rice</td>
+												<td>40</td>
+												<td>80</td>
+											</tr>
+										</tbody>
+									</table>
+							  </div>
+							</div>
+						  </div>
+						  
+						  
+						  <div class="panel panel-default">
+							<div class="panel-heading" role="tab" id="5">
+							  <h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#BREAKFASTITEMS" aria-expanded="false" aria-controls="5">
+								  BREAKFAST ITEMS
+								</a>
+							  </h4>
+							</div>
+							<div id="BREAKFASTITEMS" class="panel-collapse collapse" role="tabpanel" aria-labelledby="5">
+							  <div class="panel-body">
+								<table class="table table-striped">
+										<thead>
+											<tr>
+												<th>Name</th>
+												<th>Small Tray(in $)</th>
+												<th>Large Tray(in $)</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Poori baaji</td>
+												<td>40</td>
+												<td>80</td>
+											</tr>
+											<tr>
+												<td>Plain Dosa with chutney</td>
+												<td>40</td>
+												<td>80</td>
+											</tr>
+											<tr>
+												<td>Upma</td>
+												<td>40</td>
+												<td>80</td>
+											</tr>
+											<tr>
+												<td>Bisbille bath</td>
+												<td>40</td>
+												<td>80</td>
+											</tr>
+											<tr>
+												<td>Tamarind rice</td>
+												<td>40</td>
+												<td>80</td>
+											</tr>
+											<tr>
+												<td>Lemon rice</td>
+												<td>40</td>
+												<td>80</td>
+											</tr>
+											<tr>
+												<td>Vegetable uthappam</td>
+												<td>40</td>
+												<td>80</td>
+											</tr>
+											<tr>
+												<td>Onion uthappam</td>
+												<td>40</td>
+												<td>80</td>
+											</tr>
+											<tr>
+												<td>Rava dosa</td>
+												<td>40</td>
+												<td>80</td>
+											</tr>
+											<tr>
+												<td>Onion rava dosa</td>
+												<td>40</td>
+												<td>80</td>
+											</tr>
+											<tr>
+												<td>Pongal</td>
+												<td>40</td>
+												<td>80</td>
+											</tr>
+											<tr>
+												<td>Idli</td>
+												<td>40</td>
+												<td>80</td>
+											</tr>
+										</tbody>
+									</table>
+							  </div>
+							</div>
+						  </div>
+						  
+						  
+						  <div class="panel panel-default">
+							<div class="panel-heading" role="tab" id="6">
+							  <h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#VEGENTREE" aria-expanded="false" aria-controls="6">
+								  VEG ENTREE
+								</a>
+							  </h4>
+							</div>
+							<div id="VEGENTREE" class="panel-collapse collapse" role="tabpanel" aria-labelledby="6">
+							  <div class="panel-body">
+								<table class="table table-striped">
+										<thead>
+											<tr>
+												<th>Name</th>
+												<th>Small Tray(in $)</th>
+												<th>Large Tray(in $)</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Paneer butter masala</td>
+												<td>50</td>
+												<td>90</td>
+											</tr>
+											<tr>
+												<td>Vegetable paneer</td>
+												<td>50</td>
+												<td>90</td>
+											</tr>
+											<tr>
+												<td>Palak paneer</td>
+												<td>45</td>
+												<td>80</td>
+											</tr>
+											<tr>
+												<td>Muttar paneer</td>
+												<td>45</td>
+												<td>80</td>
+											</tr>
+											<tr>
+												<td>Dum aloo</td>
+												<td>40</td>
+												<td>75</td>
+											</tr>
+											<tr>
+												<td>Aloo methi fry</td>
+												<td>40</td>
+												<td>75</td>
+											</tr>
+											<tr>
+												<td>Malai kofta</td>
+												<td>50</td>
+												<td>90</td>
+											</tr>
+											<tr>
+												<td>Vegetable korma</td>
+												<td>40</td>
+												<td>75</td>
+											</tr>
+											<tr>
+												<td>Dal fry</td>
+												<td>35</td>
+												<td>60</td>
+											</tr>
+											<tr>
+												<td>Dal makhani</td>
+												<td>40</td>
+												<td>75</td>
+											</tr>
+											<tr>
+												<td>Rajma masala</td>
+												<td>40</td>
+												<td>75</td>
+											</tr>
+											<tr>
+												<td>Chana masala</td>
+												<td>40</td>
+												<td>75</td>
+											</tr>
+											<tr>
+												<td>Dal maharaja</td>
+												<td>35</td>
+												<td>60</td>
+											</tr>
+											<tr>
+												<td>Vegetable sambar</td>
+												<td>35</td>
+												<td>60</td>
+											</tr>
+											<tr>
+												<td>Lauki kofta</td>
+												<td>50</td>
+												<td>90</td>
+											</tr>
+											<tr>
+												<td>Aloo gobi</td>
+												<td>40</td>
+												<td>75</td>
+											</tr>
+											<tr>
+												<td>Kadhi pakodi</td>
+												<td>45</td>
+												<td>90</td>
+											</tr>
+										</tbody>
+									</table>
+							  </div>
+							</div>
+						  </div>
+						  
+						  
+						  <div class="panel panel-default">
+							<div class="panel-heading" role="tab" id="7">
+							  <h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#NONVEGENTREE" aria-expanded="false" aria-controls="7">
+								  NON VEG ENTREE
+								</a>
+							  </h4>
+							</div>
+							<div id="NONVEGENTREE" class="panel-collapse collapse" role="tabpanel" aria-labelledby="7">
+							  <div class="panel-body">
+								<table class="table table-striped">
+										<thead>
+											<tr>
+												<th>Name</th>
+												<th>Small Tray(in $)</th>
+												<th>Large Tray(in $)</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Chicken kolhapuri</td>
+												<td>50</td>
+												<td>90</td>
+											</tr>
+											<tr>
+												<td>Kadai chicken</td>
+												<td>50</td>
+												<td>90</td>
+											</tr>
+											<tr>
+												<td>Butter chicken</td>
+												<td>50</td>
+												<td>90</td>
+											</tr>
+											<tr>
+												<td>Green chicken</td>
+												<td>50</td>
+												<td>90</td>
+											</tr>
+											<tr>
+												<td>Chettinad chicken</td>
+												<td>50</td>
+												<td>90</td>
+											</tr>
+											<tr>
+												<td>Methi chicken</td>
+												<td>50</td>
+												<td>90</td>
+											</tr>
+											<tr>
+												<td>Achari chicken</td>
+												<td>50</td>
+												<td>90</td>
+											</tr>
+											<tr>
+												<td>Andhra chicken</td>
+												<td>50</td>
+												<td>90</td>
+											</tr>
+											<tr>
+												<td>Goat curry</td>
+												<td>60</td>
+												<td>110</td>
+											</tr>
+											<tr>
+												<td>Fish curry</td>
+												<td>50</td>
+												<td>90</td>
+											</tr>
+											<tr>
+												<td>Shrimp curry</td>
+												<td>60</td>
+												<td>110</td>
+											</tr>
+											<tr>
+												<td>Egg curry</td>
+												<td>40</td>
+												<td>70</td>
+											</tr>
+										</tbody>
+									</table>
+							  </div>
+							</div>
+						  </div>
+						  
+						  
+						  <div class="panel panel-default">
+							<div class="panel-heading" role="tab" id="8">
+							  <h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#BIRYANIANDRICE" aria-expanded="false" aria-controls="8">
+								  BIRYANI AND RICE
+								</a>
+							  </h4>
+							</div>
+							<div id="BIRYANIANDRICE" class="panel-collapse collapse" role="tabpanel" aria-labelledby="8">
+							  <div class="panel-body">
+								<table class="table table-striped">
+										<thead>
+											<tr>
+												<th>Name</th>
+												<th>Small Tray(in $)</th>
+												<th>Large Tray(in $)</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Plain rice</td>
+												<td>25</td>
+												<td>50</td>
+											</tr>
+											<tr>
+												<td>Vegetable pulav</td>
+												<td>40</td>
+												<td>70</td>
+											</tr>
+											<tr>
+												<td>Jeera rice</td>
+												<td>30</td>
+												<td>60</td>
+											</tr>
+											<tr>
+												<td>Corn fried rice</td>
+												<td>40</td>
+												<td>70</td>
+											</tr>
+											<tr>
+												<td>Methi peas pulav</td>
+												<td>40</td>
+												<td>70</td>
+											</tr>
+											<tr>
+												<td>Chicken dum biryani</td>
+												<td>45</td>
+												<td>80</td>
+											</tr>
+											<tr>
+												<td>Mutton dum biryani</td>
+												<td>50</td>
+												<td>90</td>
+											</tr>
+											<tr>
+												<td>Vegetable dum biryani</td>
+												<td>40</td>
+												<td>80</td>
+											</tr>
+											<tr>
+												<td>Egg dum biryani</td>
+												<td>40</td>
+												<td>80</td>
+											</tr>
+											<tr>
+												<td>Curd rice</td>
+												<td>35</td>
+												<td>70</td>
+											</tr>
+										</tbody>
+									</table>
+							  </div>
+							</div>
+						  </div>
+						  
+						  
+						  <div class="panel panel-default">
+							<div class="panel-heading" role="tab" id="9">
+							  <h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#BREADS" aria-expanded="false" aria-controls="9">
+								  BREADS
+								</a>
+							  </h4>
+							</div>
+							<div id="BREADS" class="panel-collapse collapse" role="tabpanel" aria-labelledby="9">
+							  <div class="panel-body">
+								<table class="table table-striped">
+										<thead>
+											<tr>
+												<th>Roti</th>
+												<th>Each half dollar</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Poori</td>
+												<td>each $1</td>
+											</tr>
+											<tr>
+												<td>Plain paratha</td>
+												<td>each $1</td>
+											</tr>
+											<tr>
+												<td>Aloo paratha</td>
+												<td>$2 each</td>
+											</tr>
+											<tr>
+												<td>Gobi paratha</td>
+												<td>$2</td>
+											</tr>
+											<tr>
+												<td>Paneer paratha</td>
+												<td>$2</td>
+											</tr>
+										</tbody>
+									</table>
+							  </div>
+							</div>
+						  </div>
+						  
+						  
+						  <div class="panel panel-default">
+							<div class="panel-heading" role="tab" id="10">
+							  <h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#DESSERTS" aria-expanded="false" aria-controls="10">
+								  DESSERTS
+								</a>
+							  </h4>
+							</div>
+							<div id="DESSERTS" class="panel-collapse collapse" role="tabpanel" aria-labelledby="10">
+							  <div class="panel-body">
+								<table class="table table-striped">
+										<thead>
+											<tr>
+												<th>Name</th>
+												<th>Small Tray(in $)</th>
+												<th>Large Tray(in $)</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Fruit custard</td>
+												<td>40</td>
+												<td>70</td>
+											</tr>
+											<tr>
+												<td>Carrot halwa</td>
+												<td>45</td>
+												<td>80</td>
+											</tr>
+											<tr>
+												<td>Rasmalai</td>
+												<td>45</td>
+												<td>80</td>
+											</tr>
+											<tr>
+												<td>Gulab jamun</td>
+												<td>45</td>
+												<td>80</td>
+											</tr>
+											<tr>
+												<td>Seviyan kheer</td>
+												<td>40</td>
+												<td>70</td>
+											</tr>
+											<tr>
+												<td>Rasgulla</td>
+												<td>45</td>
+												<td>80</td>
+											</tr>
+											<tr>
+												<td>Lauki kheer</td>
+												<td>40</td>
+												<td>70</td>
+											</tr>
+											<tr>
+												<td>Carrot kheer</td>
+												<td>40</td>
+												<td>70</td>
+											</tr>
+											<tr>
+												<td>Double ka meeta</td>
+												<td>45</td>
+												<td>80</td>
+											</tr>
+											<tr>
+												<td>Rabdi</td>
+												<td>45</td>
+												<td>80</td>
+											</tr>
+										</tbody>
+									</table>
+							  </div>
+							</div>
+						  </div> {% endcomment %}
+						{% for cat in menu %}
+						{% for category in cat %} 
+						  
+						  <div class="panel panel-default">
+							<div class="panel-heading" role="tab" id="{{category}}">
+							  <h4 class="panel-title">
+								<a class="collapsed" role="button" data-toggle="collapse"  data-target="#{{category}}-data" aria-expanded="false" aria-controls="{{category}}-data">
+								  {{category}}
+								</a>
+							  </h4>
+							</div>
+							<div id="{{category}}-data" class=" collapse show" data-parent="#accordionId"  aria-labelledby="{{category}}">
+							  <div class="panel-body">
+								<table class="table table-striped">
+										<thead>
+											<tr>
+												<th>Name</th>
+												<th>Small Tray(in $)</th>
+												<th>Large Tray(in $)</th>
+											</tr>
+										</thead>
+										<tbody>
+										{% for key,value in cat.items %}
+										{% for item_list in value %}
+											<tr>
+												<td>{{item_list.item}}</td>
+												<td>{{item_list.small_tray}}</td>
+												<td>{{item_list.large_tray}}</td>
+											</tr>
+										{% endfor %}
+										{% endfor %}	
+										</tbody>
+									</table>
+							  </div>
+							</div>
+						  </div>
+						  
+						{% endfor %}
+						{% endfor %} 
+						</div>
+					</div>
+					
+				</div>
+				
+				<div class="container">
+					<div class="testimonial-area pt-50">
+					<div class="container">
+						<div class="alert alert-danger">small tray serves 20-25 members(rice for 10-12 members)</div>
+						<div class="alert alert-danger">large tray serves 45-50 members(rice for 25-30 members)</div>
+					</div>
+				</div>
+				</div>
+				
+				
+            </div>
+            <!-- CONTACT AREA END -->
+
+           
+
+        </section>
+{% endblock %}

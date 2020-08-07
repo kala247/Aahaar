@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Dashboard-Aahaar</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    {% comment %} <link href="../../dist/css/bootstrap.min.css" rel="stylesheet"> {% endcomment %}
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    {% comment %} <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet"> {% endcomment %}
+
+    <!-- Custom styles for this template -->
+    {% load static %}
+    <link href="{% static 'css/shortcode/dashboard.css'%}" rel="stylesheet"/>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{% url 'home'%}">Aahaar</a>
+        
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="{% url 'logout'%}">Logout</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+            <li><a href="{% url 'pmform'%}">Add New Item</a></li>
+           
+            <li><a href="#">Analytics</a></li>
+            <li><a href="#">Export</a></li>
+          </ul>
+         
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Dashboard</h1>
+
+          <div class="row placeholders">
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Label</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Label</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Label</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Label</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+          </div>
+
+        {% for cat in menu %}
+        {% for category in cat %}
+          <h2 class="sub-header">{{category}}</h2>
+
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  {% comment %} <th>Category</th> {% endcomment %}
+                  <th>Item Id</th>
+                  <th>Item Name</th>
+                  <th>Single Tray &#8377;</th>
+                  <th>Large Tray &#8377;</th>
+                  {% comment %} <th>Image</th>  {% endcomment %}
+                  <th>Edit Item</th>
+                </tr>
+              </thead>
+              <tbody>
+              {% for key,value in cat.items %}
+              {% for item_list in value %}
+                <tr>
+                  
+                  <td>{{item_list.item_id}}</td>
+                  <td>{{item_list.item}}</td>
+                  <td>{{item_list.small_tray}}</td>
+                  <td>{{item_list.large_tray}}</td>
+                  {% comment %} <td><img src="{{item_list.img}}"/></td> {% endcomment %}
+                  {% comment %} <td><img src="{{item_list.img.url}}" alt="{{item_list.img}}" class="img-thumbnail"></td> {% endcomment %}
+                  <td>
+                  <a href="{% url 'update' item_list.id %}"><button>Edit</button></a>
+                  <a href="{% url 'delete' item_list.id %}"><button>Delete</button></a>
+                  </td>
+                </tr>  
+              {% endfor %}
+               {% endfor %}
+              </tbody>
+            </table>
+            {% endfor %}
+             {% endfor %}          
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    {% comment %} <script src="../../dist/js/bootstrap.min.js"></script> {% endcomment %}
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    {% comment %} <script src="../../assets/js/vendor/holder.min.js"></script> {% endcomment %}
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    {% comment %} <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> {% endcomment %}
+    
+    
+  </body>
+
+</html>

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}partymenu_form {% endblock %}
+
+{% block body %}
+<div class="breadcrumbs-area bread-bg-2 bg-opacity-black-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="breadcrumbs">
+                            <h2 class="breadcrumbs-title">Party Menu Form</h2>
+                            <ul class="breadcrumbs-list">
+                                <li><a href="{% url 'home'%}">Home</a></li>
+                                <li>Party Menu Form</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<div class="container" >
+	<div class="testimonial-area pt-50">
+		<div class="container" >
+        <h1> Party Menu Form</h1>
+            <div >
+                <form method="POST" action="{% url 'update' menu.id %}" enctype="multipart/form-data" class="pb-115"> 
+                        {% csrf_token %}
+
+                        {{form.as_p}}
+
+                            <div class="messages">
+                                {% for msg in messages%}
+                                    <div class="alert alert-{{msg.level_tag}}" role="alert">
+                                            {{msg}}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        <button type='submit' class='btn btn-default'>ADD</button>
+                        
+                </form>
+            </div>
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}

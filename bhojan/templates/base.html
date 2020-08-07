@@ -1,0 +1,285 @@
+
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% block title%} {% endblock %}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <!-- Favicon -->
+
+    {% load static %}
+    <!-- All css files are included here. -->
+    <!-- Theme main style -->
+    <link rel="stylesheet" href= "{% static 'css/shortcode/style.css'%}">
+    <!-- Bootstrap fremwork main css -->
+    <link rel="stylesheet" href="{% static 'css/shortcode/bootstrap.min.css' %}">
+    <!-- nivo slider CSS -->
+    <link rel="stylesheet" href="{% static 'lib/css/nivo-slider.css'%}"/>
+    <!-- This core.css file contents all plugings css file. -->
+    <link rel="stylesheet" href="{% static 'css/core.css'%}">
+    <!-- Theme shortcodes/elements style -->
+    <link rel="stylesheet" href="{% static 'css/shortcode/shortcodes.css'%}">
+    <!-- Responsive css -->
+    <link rel="stylesheet" href="{% static 'css/responsive.css'%}">
+    <!-- Template color css -->
+    <link href="{% static 'css/color/color-core.css'%}" data-style="styles" rel="stylesheet">
+    <!-- User style -->
+    <link rel="stylesheet" href="{% static 'css/custom.css'%}">
+
+
+    <!-- Modernizr JS -->
+    <script src="{% static 'js/vendor/modernizr-2.8.3.min.js'%}"></script>
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->  
+
+    <!-- Body main wrapper start -->
+    <div class="wrapper">
+        <div class="messages">
+            {% for msg in messages %}
+                <div class="alert alert-{{msg.level_tag}}" role="alert">
+                    {{msg}}
+                </div>
+            {% endfor %}
+        </div>
+        <!-- HEADER AREA START -->
+        <header class="header-area header-wrapper">
+            <div class="header-top-bar bg-white">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="logo">
+                                <a href="{% url 'home'%}">
+                                    <img src="{% static 'images/aahaar_logo.png'%}" alt="" style="height:90px">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 hidden-sm hidden-xs">
+                            <div class="company-info clearfix">
+                                <div class="company-info-item">
+                                    <div class="header-icon">
+                                        <img src="{% static 'images/icons/login.png'%}" alt="">
+                                    </div>
+                                    {% if user.is_authenticated %}
+                                    <div class="header-info">
+                                        <h6>{{user.first_name}}..<a href="{% url 'logout' %}">Logout</a></h6>
+                                        
+                                    </div>
+                                    {% else %}
+                                    <div class="header-info">
+                                        <h6><a href="{% url 'login' %}">Login</a>/<a href="{% url 'register'%}">Register</a></h6>
+                                        <p>You can login/register </p>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                                <div class="company-info-item">
+                                    <div class="header-icon">
+                                        <img src="{% static 'images/icons/mail-open.png'%}" alt="">
+                                    </div>
+                                    <div class="header-info">
+                                        <h6><a href="javascript:void(0);">info@aahaar.org</a></h6>
+                                        <p>You can mail us</p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 col-xs-12 hide">
+                            <div class="header-search clearfix">
+                                <form action="#">
+                                    <button class="search-icon" type="submit">
+                                        <img src="{% static 'images/icons/search.png'%}" alt="">
+                                    </button>
+                                    <input type="text" placeholder="Search...">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="sticky-header" class="header-middle-area  transparent-header hidden-xs">
+                <div class="container">
+                    <div class="full-width-mega-drop-menu">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="sticky-logo">
+                                    <a href="{% url 'home'%} ">
+                                        <img src="{% static 'images/aahaar_logo.png'%}" alt="">
+                                    </a>
+                                </div>
+                                <nav id="primary-menu">
+                                    <ul class="main-menu text-center">
+                            
+                                        
+                                        <li {% if "/" == request.path %}class="active"{% endif %}><a href="{% url 'home' %}">Home</a></li>
+                                        <li {% if "/profile/" == request.path %}class="active"{% endif %}><a href="{% url 'profile'%}" >AAHAAR PROFILE</a></li>
+                                        <li {% if "/wmenu/" == request.path %}class="active"{% endif %}><a href="{% url 'wmenu'%}">EVERY WEEK MENU </a></li>
+                                        <li {% if "/menu/" == request.path %}class="active"{% endif %}><a href="{% url 'menu'%}">PARTY MENU</a></li>
+                                        <li {% if "/contact/" == request.path %}class="active"{% endif %}><a href="{% url 'contact'%}">CONTACT US</a></li>
+                                        {% if user.is_authenticated and user.is_superuser%}
+                                        <li {% if "/dashboard/" == request.path %}class="active"{% endif %}><a href="{% url 'dashboard'%}">dashboard</a></li>
+                                        {% endif %}
+                                    
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- HEADER AREA END -->
+
+        <!-- MOBILE MENU AREA START -->
+        <div class="mobile-menu-area hidden-sm hidden-md hidden-lg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="mobile-menu">
+                            <nav id="dropdown">
+                                <ul>
+                                    <li class="active"><a href="index.html">HOME</a></li>
+									<li><a href="bhojan_profile.html" class="aboutBhojan">AAHAAR PROFILE</a></li>
+								<!--<li><a href="javascript:void(0);">Projects Gallery</a>
+									<ul class="drop-menu">
+										<li><a href="javascript:void(0);">Current Projects</a></li>
+										<li><a href="javascript:void(0);">Upcoming Projects</a></li>
+										<li><a href="javascript:void(0);">Previous Projects</a></li>
+									</ul>
+								</li>-->
+								<li><a href="everyweekmenu.html">EVERY WEEK MENU </a></li>
+								<li><a href="partymenu.html">PARTY MENU</a></li>
+								<li><a href="contact.html">CONTACT US</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- MOBILE MENU AREA END -->
+    
+    {% block body %}
+
+     
+
+    {% endblock %}
+    
+
+        <!-- Start footer area -->
+        <footer id="footer" class="footer-area bg-2 bg-opacity-black-90">
+            <div class="footer-top pt-110 pb-80">
+                <div class="container">
+                    <div class="row">
+                        <!-- footer-address -->
+						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="footer-widget">
+                                <h6 class="footer-titel">Contanct</h6>
+                                <ul class="footer-address">
+                                    <li>
+                                        <div class="address-icon">
+                                            <img src="{% static 'images/icons/location-2.png'%}" alt="">
+                                        </div>
+                                        <div class="address-info">
+                                            <span>Evergreen,</span>
+                                            <span>San Jose, </span>
+                                            <span>CA 95121, </span>
+											<span>USA</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+						<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="footer-widget">
+                                <h6 class="footer-titel">&nbsp;</h6>
+                                <ul class="footer-address">
+                                    <li>
+                                        <div class="address-icon">
+                                            <img src="{% static 'images/icons/phone-3.png'%}" alt="">
+                                        </div>
+                                        <div class="address-info">
+                                            <span>Telephone : +1-5102039957</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="address-icon">
+                                            <img src="{% static 'images/icons/world.png'%}" alt="">
+                                        </div>
+                                        <div class="address-info">
+                                            <span>Email : info@aahaar.org</span>
+                                            <span>Web :<a href="#" target="_blank"> www.aahaar.org</a></span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="footer-widget">
+                                <h6 class="footer-titel">Google Map</h6>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3173.7055319054434!2d-121.807201185205!3d37.30211224698582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e2d800ec5775d%3A0x7ae64436b17a52e3!2sSan+Jose%2C+CA+95121%2C+USA!5e0!3m2!1sen!2sin!4v1544440614281" style="width:100%;" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <!-- footer-latest-news -->
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="copyright text-center">
+                                <p>Copyright &copy; 2018. All rights reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End footer area -->
+    </div>
+    <!-- Body main wrapper end -->
+    
+
+
+    <!-- Placed js at the end of the document so the pages load faster -->
+
+    <!-- jquery latest version -->
+    <script src="{% static 'js/vendor/jquery-3.1.1.min.js'%}"></script>
+    <!-- Bootstrap framework js -->
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <!-- Nivo slider js -->    
+    <script src="{% static 'lib/js/jquery.nivo.slider.js'%}"></script>
+    <!-- ajax-mail js -->
+    <script src="{% static 'js/ajax-mail.js'%}"></script>
+    <!-- All js plugins included in this file. -->
+    <script src="{% static 'js/plugins.js'%}"></script>
+    <!-- Main js file that contents all jQuery plugins activation. -->
+    <script src="{% static 'js/main.js'%}"></script>
+	
+	<script type="text/javascript">
+	
+	$( document ).ready(function() {
+		$('a.aboutBhojan').click(function(){
+			$('html, body').animate({
+				scrollTop: $( $(this).attr('href') ).offset().top
+			}, 500);
+			return false;
+		});
+	});
+	
+		
+	</script>
+
+</body>
+
+</html>

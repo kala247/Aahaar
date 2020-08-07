@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Aahaar-profile{% endblock %}
+{% block body %}
+       <div class="breadcrumbs-area bread-bg-4 bg-opacity-black-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="breadcrumbs">
+                            <h2 class="breadcrumbs-title">Aahaar Profile</h2>
+                            <ul class="breadcrumbs-list">
+                                <li><a href="{% url 'home'%}">Home</a></li>
+                                <li>Aahaar Profile</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+		<section id="page-content" class="page-wrapper">
+
+            <!-- CONTACT AREA START -->
+            <div class="contact-area pt-50 pb-50">
+				<div class="testimonial-area ptb-50">
+					<div class="container">
+						<div class="section-title mb-30 text-center">
+							<h3>ABOUT</h3>
+							<h2 class="h1 mb50">AAHAAR</h2>
+							<p>&nbsp;</p>
+							<p>We have a passion for serving healthy and hygine Indian food for our customers, our toppest priority is to serve less oily yet tasty food.</p>
+							<p>We make food with lots of love and care. we always prepare everything the way we were taught growing up in our family kitchens.</p>
+							<p>Dont forget to try our signature dish dum biryani and gulab jamun.</p>
+							<p>We make all the masalas at home which enhance flavor in recipe. We bring spices all the way from farms in india to your plate.</p>
+						</div>
+					</div>
+				</div>
+				
+				
+				
+			
+			
+			
+			<div class="featured-flat-area pt-50 pb-80">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="section-title-2 text-center">
+                                <h2>Our Special Dish</h2>
+                                <p>we make food with lots of love and care. we always prepare everything the way we were taught growing up in our family kitchens.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="featured-flat">
+                        <div class="row">
+                            <!-- flat-item -->
+                            
+                            {% for i in menu %}
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="flat-item">
+                                    <div class="flat-item-image">
+                                        <img src="{{i.img.url}}" alt="">
+                                    </div>
+                                    <div class="flat-item-info">
+                                        <div class="flat-title-price">
+                                            <h5><a href="javascript:void(0);">{{i.item}}</a></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            
+                        </div>
+                    </div>
+                    <div class="pagination">
+                                    <span class="step-links">
+                                        {% if menu.has_previous %}
+                                            <a href="?page=1">&laquo; first</a>
+                                            <a href="?page={{ menu.previous_page_number }}">previous</a>
+                                        {% endif %}
+
+                                        <span class="current">
+                                            Page {{ menu.number }} of {{ menu.paginator.num_pages }}.
+                                        </span>
+
+                                        {% if menu.has_next %}
+                                            <a href="?page={{ menu.next_page_number }}">next</a>
+                                            <a href="?page={{ menu.paginator.num_pages }}">last &raquo;</a>
+                                        {% endif %}
+                                    </span>
+                                </div>
+                </div>
+            </div>
+    </div>
+    
+
+                                
+			
+				
+            <!-- CONTACT AREA END -->
+
+           
+
+        </section>
+{% endblock %}

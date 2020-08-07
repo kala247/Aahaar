@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <title>Register</title>
+    {% load static %}
+    <link  rel="stylesheet" href={% static 'css/shortcode/register.css' %} />
+</head>
+<body>
+<div class="container">
+        <div class="row centered-form">
+        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+        	<div class="panel panel-default">
+        		<div class="panel-heading">
+						{% comment %} <div class="logo">
+                                <a href="{% url 'home'%}">
+                                    <img src="{% static 'images/logo.png'%}" alt="">
+                                </a> {% endcomment %}
+						<h6><a href="{% url "home"%}">Home</a></h6>
+			    		<h3 class="panel-title">Please sign up for Aahaar.. <small>It's free!</small></h3>
+			 			</div>
+			 			<div class="panel-body">
+			    		<form role="form" method = "POST" action="{% url 'register' %}">
+
+							{% csrf_token %}
+
+			    			<div class="row">
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			                <input type="text" name="firstname" id="firstname" class="form-control input-sm floatlabel" placeholder="First Name">
+			    					</div>
+			    				</div>
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			    						<input type="text" name="lastname" id="lastname" class="form-control input-sm" placeholder="Last Name">
+			    					</div>
+			    				</div>
+			    			</div>
+
+							<div class="form-group">
+			    				<input type="text" name="username" id="username" class="form-control input-sm" placeholder="User name">
+			    			</div>
+
+			    			<div class="form-group">
+			    				<input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
+			    			</div>
+
+			    			<div class="row">
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			    						<input type="password" name="password1" id="password1" class="form-control input-sm" placeholder="Password">
+			    					</div>
+			    				</div>
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			    						<input type="password" name="password2" id="password2" class="form-control input-sm" placeholder="Confirm Password">
+			    					</div>
+			    				</div>
+			    			</div>
+			    			<div class="messages">
+            					{% for msg in messages%}
+                					<div class="alert alert-{{msg.level_tag}}" role="alert">
+                   						 {{msg}}
+                					</div>
+            					{% endfor %}
+        					</div>
+			    			<input type="submit" value="Register" class="btn btn-info btn-block">
+			    			<h5>Already have a account?<a href={% url 'login'%}>Login here</a></h5>
+			    		</form>
+			    	</div>
+	    		</div>
+    		</div>
+    	</div>
+    </div>
+
+</body>
+</html>

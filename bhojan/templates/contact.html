@@ -1,0 +1,84 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block title %}Contact Us {% endblock %}
+
+{% block body %}
+       <div class="breadcrumbs-area bread-bg-1 bg-opacity-black-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="breadcrumbs">
+                            <h2 class="breadcrumbs-title">Contact</h2>
+                            <ul class="breadcrumbs-list">
+                                <li><a href="{% url 'home'%}">Home</a></li>
+                                <li>Contact</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+		<section id="page-content" class="page-wrapper">
+
+            <!-- CONTACT AREA START -->
+            <div class="contact-area pt-115 pb-115">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-5 col-xs-12">
+                            <!-- get-in-toch -->
+                            <div class="get-in-toch">
+                                <div class="section-title mb-30">
+                                    <h3>GET IN</h3>
+                                    <h2>TOUCH</h2>
+                                </div>
+                                <div class="contact-desc mb-50">
+                                    <p><span data-placement="top" data-toggle="tooltip" data-original-title="The name you can trust" class="tooltip-content">Aahaar</span> We have a passion for serving healthy and hygine Indian food for our customers, our toppest priority is to serve less oily yet tasty food.</p>                                </div>
+                                <ul class="contact-address">
+                                    <li>
+                                        <div class="contact-address-icon">
+                                            <img src="{% static 'images/icons/location-2.png' %}" alt="">
+                                        </div>
+                                        <div class="contact-address-info">
+                                            <span>Evergreen,</span>
+                                            <span>San Jose, </span>
+                                            <span>CA 95121, </span>
+											<span>USA</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="contact-address-icon">
+                                            <img src="{% static 'images/icons/phone-3.png'%}" alt="">
+                                        </div>
+                                        <div class="contact-address-info">
+                                            <span>Telephone : 5102039957</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="contact-address-icon">
+                                            <img src="{% static 'images/icons/world.png'%}" alt="">
+                                        </div>
+                                        <div class="contact-address-info">
+                                            <span>Email : info@aahaar.org</span>
+                                            <span>Web :<a href="#" target="_blank"> www.aahaar.org</a></span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-7 col-xs-12">
+                             <!-- GOOGLE MAP AREA START -->
+							<div class="google-map-area">
+								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3173.7055319054434!2d-121.807201185205!3d37.30211224698582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e2d800ec5775d%3A0x7ae64436b17a52e3!2sSan+Jose%2C+CA+95121%2C+USA!5e0!3m2!1sen!2sin!4v1544440614281" style="width:100%;" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+							</div>
+							<!-- GOOGLE MAP AREA END -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- CONTACT AREA END -->
+
+           
+
+        </section>
+{% endblock %}
