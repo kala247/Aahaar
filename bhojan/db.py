@@ -30,7 +30,7 @@ def p_menu(l):
                 cat_list.append(data[i])
         l['category'].append({category_list[item]:cat_list})
         cat_list= []
-    print( json.dumps(l,indent=4, default=str) )
+    json.dumps(l,indent=4, default=str) 
 l = {'category':[]}
 p_menu(l)
 
