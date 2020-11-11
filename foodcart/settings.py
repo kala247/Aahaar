@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bhojan.apps.BhojanConfig'
+    'bhojan.apps.BhojanConfig',
+    'bhojanapi',
+    'rest_framework',
+    'rest_api'
 ]
 
 MIDDLEWARE = [

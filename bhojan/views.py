@@ -1,6 +1,6 @@
 from django.shortcuts import render ,redirect,get_object_or_404
 from .forms import PartymenuForm
-from .models import Partymenu
+from bhojan.models import Partymenu
 from django.contrib.auth.models import User ,auth
 from django.contrib.auth import logout
 from django.contrib import messages
@@ -21,6 +21,7 @@ def home(request):
 def profile(request):
 
     menu = Partymenu.objects.all()
+    print(menu)
     paginator = Paginator(menu, 6) # Show 25 contacts per page.
 
     page_number = request.GET.get('page')
@@ -89,10 +90,10 @@ def register(request):
                 return redirect('login')
                 messages.info(request,'User created successfully')
         else:
-            messages.info(request,'Passwords not matching')
-    return render(request,'register.html')
+            messages.info(request, 'Passwords not matching')
+    return render(request, 'register.html')
 
-def login(request):
+def login (request):
 
     if request.method=='POST':
         username = request.POST['username']
@@ -152,5 +153,5 @@ def deleteitem(request,id):
         menu.delete()
         return redirect('dashboard')
     else:
-        messages.info(request,'OOPS..! You are not a Superuser...')
+        messages.info(request ,'OOPS..! You are not a Superuser...')
         return redirect('home')
